@@ -1,0 +1,4 @@
+crewai[tools]
+crewai
+langchain
+PyPDF2
