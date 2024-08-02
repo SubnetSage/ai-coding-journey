@@ -16,6 +16,7 @@ This script is designed to read a PDF document and summarize each page using an 
    ```bash
    pip install PyPDF2
    pip install your_crewai_package
+   pip install langchain
    pip install langchain-community
    pip install ollama
    ```
