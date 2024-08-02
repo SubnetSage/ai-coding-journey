@@ -60,7 +60,7 @@ def summarize_pdf(file_path, llm_model):
 start_time = time.time()
 
 # Load the document and summarize each page
-pdf_summary = summarize_pdf("net-intro.pdf", ollama_llm)
+pdf_summary = summarize_pdf("marketing_materials.pdf", ollama_llm)
 
 # Track the end time
 end_time = time.time()
@@ -96,12 +96,12 @@ def create_task(agent, description, expected_output):
         expected_output=expected_output
     )
 
-pdf_summarizer_role = 'Credit Expert'
-pdf_summarizer_goal = 'Summarize each page of the provided PDF document.'
+pdf_summarizer_role = 'Digital Marketing Specialist'
+pdf_summarizer_goal = 'Summarize each page of the provided PDF marketing materials.'
 pdf_summarizer_backstory = f"""
-    You are an expert IT instructor specializing in Linux systems administration and open-source technologies. 
-    Your task is to read and rewrite each page of the given PDF document to simplify and clarify the key concepts of Linux for a broad audience.
-    Break down complex topics into easy-to-understand explanations and provide practical examples from real-world scenarios to ensure clarity and comprehension.
+    You are an expert in digital marketing with extensive experience in creating and analyzing marketing materials. 
+    Your task is to read and rewrite each page of the given PDF document to simplify and clarify key marketing concepts for a broad audience.
+    Break down complex marketing strategies into easy-to-understand explanations and provide practical examples from real-world scenarios to ensure clarity and comprehension.
     Here is the guide for reference: {pdf_summary[:500]}... (truncated)
 """
 
@@ -128,6 +128,7 @@ final_summary = results[0].output
 
 # Print the final summary
 print(final_summary)
+
 ```
 
 This script lays the groundwork for a PDF summarization tool using an LLM, highlighting the initialization, processing, and management of summarization tasks. The project is still under development, and further refinements are expected.
