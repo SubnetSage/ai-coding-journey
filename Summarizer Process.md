@@ -15,7 +15,7 @@ This script is designed to read a PDF document and summarize each page using an 
 1. **Install the Required Libraries**:
    ```bash
    pip install PyPDF2
-   pip install your_crewai_package
+   pip install crewai
    pip install langchain
    pip install langchain-community
    pip install ollama
@@ -37,6 +37,7 @@ This script is designed to read a PDF document and summarize each page using an 
 ```python
 import time
 from crewai import Agent, Task, Crew
+from crewai_tools import tool
 from langchain_community.llms import Ollama
 from PyPDF2 import PdfReader
 
